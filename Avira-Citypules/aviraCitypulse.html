@@ -4,12 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avira Citypulse</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+            background-color: #0B4F71;
+        }
+        .name {
+            display: flex;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            
+        }
+        .first_head {
+            color: #ffffff;
+        }
+        .second_head {
+            color: #FFD166;
+            padding-left: 10px;
+        }
+        nav {
+           display: flex;
+           gap: 40px;
+
+        }
+        nav span {
+            color: white;
+            cursor: pointer;
+            justify-content: space-between;
+            font-family: Arial, sans-serif;
+        }
+        .description{
+            background-color: skyblue;
+            text-align: center;
+            padding: 55px;
+
+        }
+        h5{
+            font-size: 20px;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            padding-bottom: 20px;
+
+        }
+        h1{
+            font-size: 60px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p{
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .btn button{
+            background-color: #FFD166;
+            color: black;
+            border: 1px solid #FFD166;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+
+    </style>
 </head>
 <body>
     <header>
 
-        <div class="projectname">Avira</div>
-        <div class="projectname1">Citypulse</div>
+        <div class="name">
+            <span class="first_head">AVIRA</span>
+            <span class="second_head">CITYPULSE</span>
+        </div>
 
         <nav>
             <span>Home</span>
@@ -18,12 +94,13 @@
             <span>About</span>
         </nav>
     </header>
-    <section class="hero">
+
+    <section class="description">
         <h5>WELCOME TO YOUR CITY</h5>
 
-        <h1>DISCOVER THE BEAUTY OF YOUR CITY</h1>
+        <h1>DISCOVER THE<br> BEAUTY OF YOUR CITY</h1>
 
-        <p>Explore historical places, beautiful parks, exciting events and amazing destinations around your city.</p>
+        <p>Explore historical places, beautiful parks, exciting events and amazing destinations<br> around your city.</p>
 
         <div class="btn">
             <button>EXPLORE NOW</button>
@@ -35,6 +112,11 @@
 
             <p>Explore the most popular destinations in the city.</p>
 
-            </section>
+            <article>
+              
+            </article>
+
+        </section>
+
     </main>
 </body>
