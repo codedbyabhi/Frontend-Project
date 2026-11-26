@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TASTORA | The Art of Fine Dining</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111111' stroke='%23D4AF37' stroke-width='6'/><text x='50' y='68' font-family='Georgia, serif' font-size='54' font-weight='bold' fill='%23D4AF37' text-anchor='middle'>T</text></svg>">
   <style>
     * {
       box-sizing: border-box;
@@ -12,457 +11,650 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0F0E0D;
-      color: #F5F2EB;
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0B0912;
+      color: #E8E4F0;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
     }
 
-    header {
-      background-color: #141311;
-      padding: 20px 8%;
+    .header {
+      background-color: #0B0912;
+      padding: 18px 44px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      border-bottom: 1px solid #2C2838;
     }
 
-    .logo {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 3px;
+    .brand {
+      font-size: 22px;
+      letter-spacing: 4px;
       color: #FFFFFF;
     }
 
-    .logo span {
-      color: #D4AF37;
+    .brand-star {
+      color: #D4AF55;
     }
 
-    nav {
+    .nav {
       display: flex;
-      gap: 30px;
+      gap: 24px;
     }
 
-    nav a {
-      color: #E2DDD5;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.8px;
+    .nav-item {
+      font-size: 12px;
+      color: #E8E4F0;
+      cursor: pointer;
       transition: color 0.2s;
     }
 
-    nav a:hover {
-      color: #D4AF37;
+    .nav-item:hover {
+      color: #D4AF55;
     }
 
-    .reserve-btn {
-      background-color: #D4AF37;
-      color: #111111;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 800;
+    .gold-btn {
+      background-color: #D4AF55;
+      color: #1A1405;
+      font-size: 14px;
+      font-weight: 600;
       letter-spacing: 1.5px;
-      padding: 11px 22px;
-      border-radius: 4px;
-      transition: background-color 0.2s, transform 0.2s;
-    }
-
-    .reserve-btn:hover {
-      background-color: #E5C158;
-      transform: translateY(-1px);
-    }
-
-    .hero {
-      background: linear-gradient(rgba(15, 14, 13, 0.82), rgba(15, 14, 13, 0.9)), radial-gradient(circle at center, #2B2418 0%, #0F0E0D 100%);
-      text-align: center;
-      padding: 110px 20px 90px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3.5px;
-      color: #D4AF37;
       text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 46px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      color: #FFFFFF;
-      max-width: 780px;
-      line-height: 1.25;
-    }
-
-    .hero p {
-      font-size: 16px;
-      color: #C8C2B8;
-      max-width: 580px;
-      margin-bottom: 10px;
-    }
-
-    .btn-primary {
+      padding: 12px 24px;
+      border: 1px solid #D4AF55;
+      cursor: pointer;
       display: inline-block;
-      background-color: #D4AF37;
-      color: #111111;
-      text-decoration: none;
+    }
+
+    .outline-btn {
+      background-color: transparent;
+      color: #D4AF55;
       font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      padding: 14px 32px;
-      border-radius: 4px;
-      transition: background-color 0.2s;
-    }
-
-    .btn-primary:hover {
-      background-color: #E5C158;
-    }
-
-    .hero-subnote {
-      margin-top: 24px;
-      font-size: 11px;
-      letter-spacing: 3px;
-      color: #9C9488;
-    }
-
-    main {
-      width: 100%;
-      flex: 1;
-    }
-
-    .section-container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-header h2 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      color: #FFFFFF;
-      margin: 8px 0 12px 0;
-    }
-
-    .section-header p {
-      font-size: 15px;
-      color: #A8A298;
-      max-width: 560px;
-      margin: 0 auto;
-    }
-
-    .about-grid {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-
-    .about-text {
-      flex: 1.3;
-      min-width: 300px;
-    }
-
-    .about-text h2 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 32px;
-      color: #FFFFFF;
-      margin: 10px 0 20px 0;
-      line-height: 1.3;
-    }
-
-    .about-text p {
-      font-size: 15px;
-      color: #C8C2B8;
-      margin-bottom: 16px;
-    }
-
-    .btn-outline {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border: 1px solid #D4AF55;
+      cursor: pointer;
       display: inline-block;
-      margin-top: 10px;
-      padding: 12px 28px;
-      border: 1px solid #D4AF37;
-      color: #D4AF37;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      border-radius: 4px;
-      transition: background-color 0.2s, color 0.2s;
     }
 
-    .btn-outline:hover {
-      background-color: #D4AF37;
-      color: #111111;
+    .label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #D4AF55;
     }
 
-    .story-aside {
-      flex: 1;
-      min-width: 280px;
-      background-color: #181614;
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      border-radius: 10px;
-      padding: 44px 32px;
-      text-align: center;
+    .section-title {
+      font-size: 30px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    .purple {
+      color: #A98BE0;
+    }
+
+    .hero-section {
+      background-color: #1F1830;
+      padding: 36px 20px 50px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      align-items: center;
+      text-align: center;
+      gap: 22px;
     }
 
-    .story-aside h3 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 28px;
-      color: #D4AF37;
-      letter-spacing: 2px;
-    }
-
-    .story-aside .tag-small {
-      font-size: 11px;
-      letter-spacing: 3px;
-      color: #A8A298;
-    }
-
-    .story-aside h4 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 20px;
+    .hero-title {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.1;
+      text-transform: uppercase;
       color: #FFFFFF;
-      letter-spacing: 1px;
-      margin-top: 6px;
     }
 
-    .menu-bg {
-      background-color: #141311;
-      border-top: 1px solid rgba(212, 175, 55, 0.15);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    .hero-text {
+      font-size: 13px;
+      color: #B9B3C7;
+      max-width: 470px;
     }
 
-    .cards-row {
+    .hero-tagline {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #A98BE0;
+    }
+
+    .story-section {
+      background-color: #16121F;
+      padding: 70px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .story-wrap {
+      width: 100%;
+      max-width: 1130px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .story-text {
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .story-title {
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.4;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    .story-desc {
+      font-size: 13px;
+      color: #B9B3C7;
+      line-height: 1.9;
+    }
+
+    .est-box {
+      width: 264px;
+      height: 254px;
+      background-color: #1F1830;
+      border: 1px solid #D4AF55;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .est-year {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #D4AF55;
+    }
+
+    .est-line {
+      width: 48px;
+      border-top: 1px solid #D4AF55;
+      margin: 10px 0;
+    }
+
+    .est-text {
+      font-size: 18px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      line-height: 1.5;
+    }
+
+    .menu-section {
+      background-color: #0B0912;
+      padding: 70px 20px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+    }
+
+    .menu-intro {
+      font-size: 13px;
+      color: #B9B3C7;
+      margin-bottom: 26px;
+    }
+
+    .cards-container {
       display: flex;
       justify-content: center;
       align-items: stretch;
       flex-wrap: wrap;
-      gap: 28px;
+      gap: 20px;
+      width: 100%;
+      max-width: 1020px;
     }
 
     .menu-card {
-      flex: 1;
-      min-width: 290px;
-      max-width: 350px;
-      background-color: #1A1816;
-      border: 1px solid rgba(212, 175, 55, 0.25);
-      border-radius: 10px;
-      padding: 32px 26px;
+      width: 240px;
+      background-color: #1F1830;
+      border: 1px solid #D4AF55;
+      padding: 34px 25px 30px;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 14px;
     }
 
-    .card-num {
-      font-size: 14px;
-      font-weight: 800;
-      color: #D4AF37;
-      letter-spacing: 2px;
+    .card-number {
+      font-size: 26px;
+      font-weight: 700;
+      color: #D4AF55;
     }
 
-    .menu-card h3 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 21px;
-      color: #FFFFFF;
-      letter-spacing: 1px;
+    .card-title {
+      font-size: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #A98BE0;
     }
 
-    .menu-card p {
-      font-size: 14px;
-      color: #A8A298;
+    .card-desc {
+      font-size: 13px;
+      color: #B9B3C7;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
 
-    .dish-list {
-      list-style: none;
-      margin: 10px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      flex: 1;
-    }
-
-    .dish-list li {
+    .item-row {
       display: flex;
       justify-content: space-between;
+      width: 100%;
+      font-size: 10px;
+      letter-spacing: 1px;
+      padding: 10px 0;
+      border-bottom: 1px solid #3A3350;
+    }
+
+    .item-price {
+      color: #D4AF55;
+    }
+
+    .view-btn {
+      margin-top: 14px;
+      background-color: #D4AF55;
+      color: #1A1405;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      cursor: pointer;
+    }
+
+    .specials-section {
+      background-color: #1F1830;
+      padding: 64px 20px 60px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      padding-bottom: 8px;
-      border-bottom: 1px dashed rgba(212, 175, 55, 0.2);
-      font-size: 15px;
-      color: #F5F2EB;
+      text-align: center;
+      gap: 14px;
     }
 
-    .dish-list li span:last-child {
-      color: #D4AF37;
-      font-weight: 700;
-    }
-
-    .card-link {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #D4AF37;
-      text-decoration: none;
-      margin-top: 8px;
-      display: inline-block;
-    }
-
-    .card-link:hover {
-      text-decoration: underline;
+    .specials-section .cards-container {
+      margin-top: 24px;
     }
 
     .special-card {
-      flex: 1;
-      min-width: 280px;
-      max-width: 350px;
-      background-color: #181614;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      border-top: 3px solid #D4AF37;
-      border-radius: 10px;
-      padding: 34px 26px;
-      text-align: center;
+      width: 240px;
+      min-height: 212px;
+      background-color: #16121F;
+      border: 1px solid #3A3350;
+      padding: 28px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
       gap: 14px;
     }
 
-    .special-card h3 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 20px;
-      color: #FFFFFF;
-      letter-spacing: 1px;
+    .special-title {
+      font-size: 22px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: #A98BE0;
     }
 
-    .special-card p {
-      font-size: 14px;
-      color: #A8A298;
-      flex: 1;
+    .special-desc {
+      font-size: 12px;
+      color: #B9B3C7;
+      line-height: 1.8;
     }
 
     .special-price {
-      font-size: 20px;
-      font-weight: 800;
-      color: #D4AF37;
-      background-color: rgba(212, 175, 55, 0.1);
-      padding: 6px 20px;
-      border-radius: 20px;
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      font-size: 17px;
+      font-weight: 700;
+      color: #D4AF55;
+    }
+
+    .features-section {
+      background-color: #0B0912;
+      padding: 70px 20px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+    }
+
+    .features-section .cards-container {
+      margin-top: 24px;
+      gap: 24px;
     }
 
     .feature-card {
-      flex: 1;
-      min-width: 270px;
-      max-width: 350px;
-      background-color: #1A1816;
-      border: 1px solid rgba(212, 175, 55, 0.2);
-      border-radius: 10px;
-      padding: 32px 24px;
-      text-align: center;
+      width: 224px;
+      height: 213px;
+      background-color: #1F1830;
+      border-bottom: 2px solid #D4AF55;
+      padding: 26px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
-    }
-
-    .feature-card h3 {
-      font-size: 26px;
-      font-weight: 800;
-      color: #D4AF37;
-      letter-spacing: 2px;
-    }
-
-    .feature-card h4 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: 1px;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      color: #A8A298;
-    }
-
-    .visit-aside {
-      max-width: 1092px;
-      margin: 0 auto 80px auto;
-      padding: 48px 24px;
-      background: linear-gradient(135deg, #1E1A14 0%, #141311 100%);
-      border: 1px solid #D4AF37;
-      border-radius: 12px;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       gap: 12px;
     }
 
-    .visit-aside h2 {
-      font-family: Georgia, 'Times New Roman', serif;
+    .feature-number {
       font-size: 28px;
+      font-weight: 300;
+      color: #D4AF55;
+    }
+
+    .feature-title {
+      font-size: 18px;
+      line-height: 1.3;
+      text-transform: uppercase;
+      color: #A98BE0;
+    }
+
+    .feature-desc {
+      font-size: 12px;
+      color: #B9B3C7;
+      line-height: 1.8;
+    }
+
+    .visit-box {
+      background-color: #1F1830;
+      border-top: 1px solid #3A3350;
+      border-bottom: 1px solid #D4AF55;
+      padding: 56px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .visit-title {
+      font-size: 28px;
+      font-weight: 400;
+      text-transform: uppercase;
       color: #FFFFFF;
-      letter-spacing: 2px;
+      margin-bottom: 10px;
     }
 
     .visit-days {
-      font-size: 13px;
-      font-weight: 700;
+      font-size: 11px;
       letter-spacing: 3px;
-      color: #D4AF37;
+      text-transform: uppercase;
+      color: #B9B3C7;
     }
 
-    .visit-aside h3 {
-      font-size: 26px;
-      font-weight: 700;
-      color: #F5F2EB;
-      letter-spacing: 1.5px;
+    .visit-time {
+      font-size: 22px;
+      color: #D4AF55;
     }
 
     .visit-note {
-      font-size: 12px;
-      letter-spacing: 2.5px;
-      color: #A8A298;
-      margin-top: 4px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #B9B3C7;
     }
 
-    footer {
-      background-color: #141311;
-      border-top: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 56px 8% 28px 8%;
-      color: #C8C2B8;
+    .footer {
+      background-color: #08060D;
+      padding: 40px 24px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
-    .footer-top {
-    
+    .footer-brand {
+      font-size: 24px;
+      letter-spacing: 4px;
+      color: #FFFFFF;
     }
+
+    .footer-tagline {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #A98BE0;
+      margin: 10px 0 30px;
+    }
+
+    .footer-columns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin-bottom: 38px;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-heading {
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #D4AF55;
+    }
+
+    .footer-info {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #B9B3C7;
+    }
+
+    .footer-copy {
+      width: 100%;
+      border-top: 1px solid #2C2838;
+      padding-top: 22px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #B9B3C7;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 14px;
+        padding: 14px 18px;
+      }
+
+      .hero-title {
+        font-size: 30px;
+      }
+
+      .story-wrap {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">
+      <span class="brand-star">✦</span>
+      <span>TASTORA.</span>
+    </div>
+    <nav class="nav">
+      <span class="nav-item">Home</span>
+      <span class="nav-item">About</span>
+      <span class="nav-item">Our Menu</span>
+      <span class="nav-item">Specials</span>
+      <span class="nav-item">Contact</span>
+    </nav>
+    <span class="gold-btn">Reserve a Table</span>
+  </header>
+
+  <main>
+
+    <section class="hero-section">
+      <span class="label">Welcome to Tastora</span>
+      <span class="hero-title">EXPERIENCE THE<br>ART OF <span class="purple">FINE DINING</span></span>
+      <span class="hero-text">Discover extraordinary flavors, elegant dining and unforgettable moments crafted with passion.</span>
+      <span class="gold-btn">Explore Our Menu</span>
+      <span class="hero-tagline">A Perfect Blend of Taste &amp; Elegance</span>
+    </section>
+
+    <section class="story-section">
+      <div class="story-wrap">
+        <div class="story-text">
+          <span class="label">Our Story</span>
+          <span class="story-title">MORE THAN JUST<br><span class="purple">A RESTAURANT</span></span>
+          <span class="story-desc">TASTORA is a destination for people who appreciate exceptional food and beautiful dining experiences.</span>
+          <span class="story-desc">Our passion for quality ingredients, creative cooking and warm hospitality makes every visit memorable.</span>
+          <span class="outline-btn">Discover More</span>
+        </div>
+        <aside class="est-box">
+          <span class="est-year">EST. 2020</span>
+          <span class="label" style="font-size:10px;">Crafted with Passion</span>
+          <div class="est-line"></div>
+          <span class="est-text">EXCELLENCE<br>IN EVERY BITE</span>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <span class="label">Discover Our Taste</span>
+      <span class="section-title">OUR <span class="purple">MENU</span></span>
+      <span class="menu-intro">Carefully selected dishes prepared with passion and premium ingredients.</span>
+
+      <div class="cards-container">
+        <article class="menu-card">
+          <span class="card-number">01</span>
+          <span class="card-title">STARTERS</span>
+          <span class="card-desc">Delicious beginnings to make your dining experience special.</span>
+          <div class="item-row"><span>Paneer Tikka</span><span class="item-price">₹220</span></div>
+          <div class="item-row"><span>Veg Spring Rolls</span><span class="item-price">₹180</span></div>
+          <div class="item-row"><span>Cheese Balls</span><span class="item-price">₹200</span></div>
+          <span class="view-btn">View Details</span>
+        </article>
+
+        <article class="menu-card">
+          <span class="card-number">02</span>
+          <span class="card-title">MAIN COURSE</span>
+          <span class="card-desc">Rich flavors and signature dishes made to perfection.</span>
+          <div class="item-row"><span>Paneer Butter Masala</span><span class="item-price">₹280</span></div>
+          <div class="item-row"><span>Veg Biryani</span><span class="item-price">₹250</span></div>
+          <div class="item-row"><span>Special Thali</span><span class="item-price">₹320</span></div>
+          <span class="view-btn">View Details</span>
+        </article>
+
+        <article class="menu-card">
+          <span class="card-number">03</span>
+          <span class="card-title">DESSERTS</span>
+          <span class="card-desc">Sweet creations that bring your dining experience to life.</span>
+          <div class="item-row"><span>Chocolate Brownie</span><span class="item-price">₹160</span></div>
+          <div class="item-row"><span>Gulab Jamun</span><span class="item-price">₹100</span></div>
+          <div class="item-row"><span>Ice Cream</span><span class="item-price">₹120</span></div>
+          <span class="view-btn">View Details</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="specials-section">
+      <span class="label">Our Signature Collection</span>
+      <span class="section-title">CHEF'S <span class="purple">SPECIALS</span></span>
+
+      <div class="cards-container">
+        <article class="special-card">
+          <span class="special-title">ROYAL PANEER</span>
+          <span class="special-desc">A rich and creamy paneer preparation with aromatic spices.</span>
+          <span class="special-price">₹320</span>
+        </article>
+
+        <article class="special-card">
+          <span class="special-title">TASTORA BIRYANI</span>
+          <span class="special-desc">A flavorful rice preparation with carefully selected spices.</span>
+          <span class="special-price">₹280</span>
+        </article>
+
+        <article class="special-card">
+          <span class="special-title">GOLDEN DESSERT</span>
+          <span class="special-desc">A delightful sweet creation for a perfect ending.</span>
+          <span class="special-price">₹180</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <span class="label">The Tastora Experience</span>
+      <span class="section-title">WHY CHOOSE <span class="purple">US?</span></span>
+
+      <div class="cards-container">
+        <article class="feature-card">
+          <span class="feature-number">01</span>
+          <span class="feature-title">QUALITY FOOD</span>
+          <span class="feature-desc">Fresh ingredients and carefully prepared dishes.</span>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-number">02</span>
+          <span class="feature-title">EXCELLENT SERVICE</span>
+          <span class="feature-desc">Friendly hospitality and comfortable dining.</span>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-number">03</span>
+          <span class="feature-title">PREMIUM AMBIENCE</span>
+          <span class="feature-desc">An elegant atmosphere for memorable moments.</span>
+        </article>
+      </div>
+    </section>
+
+    <aside class="visit-box">
+      <span class="visit-title">VISIT <span class="purple">TASTORA</span></span>
+      <span class="visit-days">Monday - Sunday</span>
+      <span class="visit-time">11:00 AM - 11:00 PM</span>
+      <span class="visit-note">We Look Forward to Serving You</span>
+    </aside>
+
+  </main>
+
+  <footer class="footer">
+    <span class="footer-brand">TASTORA.</span>
+    <span class="footer-tagline">The Art of Fine Dining</span>
+
+    <div class="footer-columns">
+      <div class="footer-column">
+        <span class="footer-heading">Address</span>
+        <span class="footer-info">Luxury Dining Street, Hyderabad</span>
+      </div>
+      <div class="footer-column">
+        <span class="footer-heading">Contact</span>
+        <span class="footer-info">+91 98765 43210</span>
+      </div>
+      <div class="footer-column">
+        <span class="footer-heading">Opening Hours</span>
+        <span class="footer-info">11:00 AM - 11:00 PM</span>
+      </div>
+    </div>
+
+    <span class="footer-copy">© 2026 TASTORA. All Rights Reserved.</span>
+  </footer>
+
+</body>
+</html>
