@@ -1,195 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TESTORA</title>
-    <link rel="stylesheet" href="../Mini-Projects/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TASTORA | The Art of Fine Dining</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111111' stroke='%23D4AF37' stroke-width='6'/><text x='50' y='68' font-family='Georgia, serif' font-size='54' font-weight='bold' fill='%23D4AF37' text-anchor='middle'>T</text></svg>">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    html {
+      scroll-behavior: smooth;
+    }
 
-        }
-        header{
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            background-color: black;
-            padding: 40px;
-            border-bottom: 1px solid white;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0F0E0D;
+      color: #F5F2EB;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        }
-        .name{
-            color: white;
-            font-size: 30px;
-            font-family: Arial, Helvetica, sans-serif 
+    header {
+      background-color: #141311;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        }
-        .bi-stars{
-            color: rgb(214,194,14);
+    .logo {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #FFFFFF;
+    }
 
-        }
-        nav{
-            color: white;
-            font-size: 20px;
-            justify-content: space-between;
-            display: flex;
-            gap: 20px;
+    .logo span {
+      color: #D4AF37;
+    }
 
-        }
-        .table{
-            background-color: rgb(214, 194, 14);
-            font-size: 14px;
-            font-weight: bold;
-            width: 200px;
-            padding: 14px;
-            
-        }
-        .sec1{
-            background-color: #1e152a;
-            text-align: center;
-        }
-        h3{
-            color: rgb(214, 194, 14);
-            font-size: 10px;        
-            padding: 20px;
-        }
-        .p1{
-            color: white;
-            align-items: center;
-            text-align: center;
-            font-size: 50px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .p1 span{
-            color: rgb(139, 73, 165);
-        }
-        .p2{
-            color: aliceblue;
-            align-items: center;
-            text-align: center;
-            font-size: medium;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            padding: 20px;
-        }
-        .menu{
-            background-color: rgb(206, 192, 70);
-            font-size: 14px;
-            font-weight: bold;
-            width: 200px;
-            padding: 14px;
-        }
-        h4{
-            color: rgb(180, 109, 207);
-            font-size: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 20px;
-        }
-        .sec2{
-            background-color: rgb(14, 2, 19);
-            display: flex;
-           justify-content: space-between;
+    nav {
+      display: flex;
+      gap: 30px;
+    }
 
+    nav a {
+      color: #E2DDD5;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      transition: color 0.2s;
+    }
 
-        }
-        .sec2 .content{
-            color:rgb(180, 109, 207);
-           
-        }
-        .story{
-            color: whitesmoke;
-            font-family: Arial, Helvetica, sans-serif;
-            padding-left: 40px;
-        }
-        .content .p1{
-            padding-left: 40px;
-            font-size: 20px;
-        
-        }
+    nav a:hover {
+      color: #D4AF37;
+    }
 
+    .reserve-btn {
+      background-color: #D4AF37;
+      color: #111111;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      padding: 11px 22px;
+      border-radius: 4px;
+      transition: background-color 0.2s, transform 0.2s;
+    }
 
-    </style>
+    .reserve-btn:hover {
+      background-color: #E5C158;
+      transform: translateY(-1px);
+    }
 
-</head>
-<body>
-    <header>
-    <div class="name">
-        <span class="bi bi-stars"></span>
-        <span class="head-name">TESTORA.</span>
-    </div>
+    .hero {
+      background: linear-gradient(rgba(15, 14, 13, 0.82), rgba(15, 14, 13, 0.9)), radial-gradient(circle at center, #2B2418 0%, #0F0E0D 100%);
+      text-align: center;
+      padding: 110px 20px 90px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
 
-    <nav>
-        <span>Home</span>
-        <span>About</span>
-        <span>Our Menu</span>
-        <span>Specials</span>
-        <span>Contact</span>
-    </nav>
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      color: #D4AF37;
+      text-transform: uppercase;
+    }
 
-    <button class="table">RESERVE A TABLE</button>
-    </header>
-    <main>
-        
-    <section class="sec1">
-        <h3>WELCOME TO TASTORA</h3>
+    .hero h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 46px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #FFFFFF;
+      max-width: 780px;
+      line-height: 1.25;
+    }
 
-        <p class="p1">
-            EXPERIENCE THE<br>
-            ART OF <span>FINE DINING</span>
-        </p>
+    .hero p {
+      font-size: 16px;
+      color: #C8C2B8;
+      max-width: 580px;
+      margin-bottom: 10px;
+    }
 
-        <p class="p2">
-            Discover extraordinary flavors, elegant dining and unforgettable moments crafted<br>
-            with passion.
-        </p>
-        <button class="menu">EXPLORE OUR MENU</button>
+    .btn-primary {
+      display: inline-block;
+      background-color: #D4AF37;
+      color: #111111;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
 
-        <h4>A PERFECT BLEND OF TASTE & ELEGANCE</h4>
-    </section>
-        
-    <section class="sec2">
+    .btn-primary:hover {
+      background-color: #E5C158;
+    }
 
-        <div class="content"> 
+    .hero-subnote {
+      margin-top: 24px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #9C9488;
+    }
 
-             <h3 class="story">OUR STORY</h3>
+    main {
+      width: 100%;
+      flex: 1;
+    }
 
-            <p class="p1">
-                MORE THAN JUST<br>
-                <span>A RESTAURANT</span>
-            </p>
+    .section-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
 
-            <p class="p2">
-                TASTORA is a destination for people who appreciate exceptional food and<br>
-                beautiful dining experiences.
-            </p>
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
 
-            <p class="p2">
-                Our passion for quality ingredients, creative cooking and warm hospitality<br>
-                makes every visit memorable.
-            </p>
+    .section-header h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #FFFFFF;
+      margin: 8px 0 12px 0;
+    }
 
-            <button class="menu">DISCOVER MORE</button>
+    .section-header p {
+      font-size: 15px;
+      color: #A8A298;
+      max-width: 560px;
+      margin: 0 auto;
+    }
 
+    .about-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
 
-        </div>
+    .about-text {
+      flex: 1.3;
+      min-width: 300px;
+    }
 
-        <div class="box">
-            <h4>EST. 2020</h4>
-            <p>CRAFTED WITH PASSION</p>
-            <hr>
-            <h2>EXCELLENCE<br>IN EVERY BITE</h2>
-        </div>
+    .about-text h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 32px;
+      color: #FFFFFF;
+      margin: 10px 0 20px 0;
+      line-height: 1.3;
+    }
 
-    </section>
+    .about-text p {
+      font-size: 15px;
+      color: #C8C2B8;
+      margin-bottom: 16px;
+    }
 
-    <section>
+    .btn-outline {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 28px;
+      border: 1px solid #D4AF37;
+      color: #D4AF37;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      border-radius: 4px;
+      transition: background-color 0.2s, color 0.2s;
+    }
 
-    </section>
-    </main>
+    .btn-outline:hover {
+      background-color: #D4AF37;
+      color: #111111;
+    }
 
-</body>
-</html>
+    .story-aside {
+      flex: 1;
+      min-width: 280px;
+      background-color: #181614;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 10px;
+      padding: 44px 32px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .story-aside h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      color: #D4AF37;
+      letter-spacing: 2px;
+    }
+
+    .story-aside .tag-small {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #A8A298;
+    }
+
+    .story-aside h4 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+      margin-top: 6px;
+    }
+
+    .menu-bg {
+      background-color: #141311;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .cards-row {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+
+    .menu-card {
+      flex: 1;
+      min-width: 290px;
+      max-width: 350px;
+      background-color: #1A1816;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 10px;
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card-num {
+      font-size: 14px;
+      font-weight: 800;
+      color: #D4AF37;
+      letter-spacing: 2px;
+    }
+
+    .menu-card h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 21px;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+    }
+
+    .menu-card p {
+      font-size: 14px;
+      color: #A8A298;
+    }
+
+    .dish-list {
+      list-style: none;
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .dish-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed rgba(212, 175, 55, 0.2);
+      font-size: 15px;
+      color: #F5F2EB;
+    }
+
+    .dish-list li span:last-child {
+      color: #D4AF37;
+      font-weight: 700;
+    }
+
+    .card-link {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #D4AF37;
+      text-decoration: none;
+      margin-top: 8px;
+      display: inline-block;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    .special-card {
+      flex: 1;
+      min-width: 280px;
+      max-width: 350px;
+      background-color: #181614;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-top: 3px solid #D4AF37;
+      border-radius: 10px;
+      padding: 34px 26px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .special-card h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+    }
+
+    .special-card p {
+      font-size: 14px;
+      color: #A8A298;
+      flex: 1;
+    }
+
+    .special-price {
+      font-size: 20px;
+      font-weight: 800;
+      color: #D4AF37;
+      background-color: rgba(212, 175, 55, 0.1);
+      padding: 6px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .feature-card {
+      flex: 1;
+      min-width: 270px;
+      max-width: 350px;
+      background-color: #1A1816;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 10px;
+      padding: 32px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #D4AF37;
+      letter-spacing: 2px;
+    }
+
+    .feature-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: #A8A298;
+    }
+
+    .visit-aside {
+      max-width: 1092px;
+      margin: 0 auto 80px auto;
+      padding: 48px 24px;
+      background: linear-gradient(135deg, #1E1A14 0%, #141311 100%);
+      border: 1px solid #D4AF37;
+      border-radius: 12px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .visit-aside h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      color: #FFFFFF;
+      letter-spacing: 2px;
+    }
+
+    .visit-days {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #D4AF37;
+    }
+
+    .visit-aside h3 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #F5F2EB;
+      letter-spacing: 1.5px;
+    }
+
+    .visit-note {
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      color: #A8A298;
+      margin-top: 4px;
+    }
+
+    footer {
+      background-color: #141311;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 56px 8% 28px 8%;
+      color: #C8C2B8;
+    }
+
+    .footer-top {
+    
+    }
