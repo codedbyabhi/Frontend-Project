@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visha Brews - Cafe Menu</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233E2723'/><text x='50' y='68' font-size='55' text-anchor='middle'>☕</text></svg>">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #FFF8E7;
+      color: #3E2723;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background-color: #3E2723;
+      color: #FFF8E7;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #D4A373;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #D4A373;
+    }
+
+    .nav {
+      display: flex;
+      gap: 26px;
+    }
+
+    .nav-item {
+      font-size: 15px;
+      font-weight: 600;
+      color: #FFF8E7;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .nav-item:hover {
+      background-color: #D4A373;
+      color: #3E2723;
+    }
+
+    .welcome-section {
+      background-color: #EFE0C9;
+      padding: 56px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      border-bottom: 2px solid #D4A373;
+    }
+
+    .welcome-title {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #3E2723;
+    }
+
+    .welcome-tagline {
+      font-size: 18px;
+      font-weight: 500;
+      color: #6F4E37;
+    }
+
+    .menu-section {
+      padding: 48px 8%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      flex: 1;
+    }
+
+    .menu-heading {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #3E2723;
+      border-bottom: 3px solid #D4A373;
+      padding-bottom: 8px;
+    }
+
+    .cards-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 28px;
+      width: 100%;
+      max-width: 1020px;
+    }
+
+    .coffee-card {
+      background-color: #FFFDF9;
+      border: 2px solid #D4A373;
+      border-radius: 16px;
+      padding: 30px 24px;
+      width: 290px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+      box-shadow: 0 8px 20px rgba(62, 39, 35, 0.1);
+    }
+
+    .coffee-icon {
+      font-size: 46px;
+      background-color: #FFF8E7;
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      border: 2px solid #D4A373;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .coffee-name {
+      font-size: 21px;
+      font-weight: 700;
+      color: #3E2723;
+    }
+
+    .coffee-desc {
+      font-size: 14px;
+      color: #6F4E37;
+      line-height: 1.5;
+    }
+
+    .coffee-price {
+      margin-top: auto;
+      background-color: #D4A373;
+      color: #3E2723;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 6px 20px;
+      border-radius: 20px;
+    }
+
+    .offer-section {
+      background-color: #D4A373;
+      color: #3E2723;
+      margin: 0 auto 48px auto;
+      padding: 24px 36px;
+      border-radius: 14px;
+      border: 2px dashed #3E2723;
+      width: 90%;
+      max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+    }
+
+    .offer-badge {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      background-color: #3E2723;
+      color: #FFF8E7;
+      padding: 4px 14px;
+      border-radius: 20px;
+    }
+
+    .offer-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: #3E2723;
+    }
+
+    .footer {
+      background-color: #3E2723;
+      color: #D4A373;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      border-top: 3px solid #D4A373;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .welcome-title {
+        font-size: 26px;
+      }
+
+      .offer-text {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="brand">
+      <span>☕</span>
+      <span>Visha Brews</span>
+    </div>
+    <div class="nav">
+      <span class="nav-item">Home</span>
+      <span class="nav-item">Menu</span>
+      <span class="nav-item">About</span>
+    </div>
+  </div>
+
+  <div class="welcome-section">
+    <span class="welcome-title">WELCOME TO VISHA BREWS</span>
+    <span class="welcome-tagline">Fresh Coffee, Happy Moments!</span>
+  </div>
+
+  <div class="menu-section">
+    <span class="menu-heading">OUR COFFEE MENU</span>
+
+    <div class="cards-container">
+      <div class="coffee-card">
+        <span class="coffee-icon">☕</span>
+        <span class="coffee-name">Cappuccino</span>
+        <span class="coffee-desc">Rich and creamy coffee</span>
+        <span class="coffee-price">₹149</span>
+      </div>
+
+      <div class="coffee-card">
+        <span class="coffee-icon">🥤</span>
+        <span class="coffee-name">Cold Coffee</span>
+        <span class="coffee-desc">Chilled and refreshing</span>
+        <span class="coffee-price">₹179</span>
+      </div>
+
+      <div class="coffee-card">
+        <span class="coffee-icon">🍫</span>
+        <span class="coffee-name">Chocolate Mocha</span>
+        <span class="coffee-desc">Chocolate coffee delight</span>
+        <span class="coffee-price">₹189</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="offer-section">
+    <span class="offer-badge">SPECIAL OFFER!</span>
+    <span class="offer-text">Buy 2 Coffees &amp; Get 10% OFF</span>
+  </div>
+
+  <div class="footer">
+    <span>GOOD COFFEE. GOOD MOOD. GOOD DAY.</span>
+  </div>
+
+</body>
+</html>
