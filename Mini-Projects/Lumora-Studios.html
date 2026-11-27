@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumora-Studios - Movie Streaming Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
+        }
+
+        header {
+            background-color: rgb(206, 44, 44);
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 6px;
+        }
+
+        nav {
+            background-color: darkred;
+            padding: 15px;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            gap: 37px;
+        }
+
+        nav span {
+            cursor: pointer;
+        }
+
+        main {
+            background-color: #121212;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card1,
+        .card2 {
+            background-color: #1E1E1E;
+            width: 340px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #2C2C2C;
+            text-align: center;
+            color: #D4D4D4;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .card1 h2,
+        .card2 h2 {
+            color: #FFFFFF;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .card1 img,
+        .card2 img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card1 span,
+        .card2 span {
+            display: block;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .card1 span::first-letter,
+        .card2 span::first-letter {
+            color: #E50914;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .card1 p,
+        .card2 p {
+            font-size: 16px;
+            letter-spacing: 3px;
+        }
+
+        .card1 p::first-letter,
+        .card2 p::first-letter {
+            font-size: 28px;
+        }
+
+        .trending {
+            background-color: #222222;
+            width: 100%;
+            max-width: 1050px;
+            padding: 25px;
+            border-radius: 6px;
+        }
+
+        .trending h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .trending ul {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+
+        .trending li {
+            font-size: 14px;
+            color: #E0E0E0;
+            margin-bottom: 10px;
+        }
+
+        .quote {
+            background-color: #F2F2F2;
+            color: #121212;
+            padding: 15px 18px;
+            font-size: 14px;
+            border-radius: 2px;
+        }
+
+        footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        footer h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #D4D4D4;
+            margin-bottom: 12px;
+        }
+
+        footer .copy {
+            font-size: 12px;
+            color: #B0B0B0;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lumora Studios</h1>
+        <p>Watch Unlimited Movies Anytime</p>
+    </header>
+
+    <nav>
+        <span>Home</span>
+        <span>Movies</span>
+        <span>Series</span>
+        <span>Contact</span>
+    </nav>
+
+    <main>
+        <div class="cards">
+            <section class="card1">
+                <h2>Avengers: Endgame</h2>
+                <img src="../Mini-Projects/public/images/avangers-endgame.jpg" alt="Avengers Endgame">
+                <span>Earth's Mightiest Heroes unite for the final battle to save the universe.</span>
+                <p>⭐⭐⭐⭐⭐</p>
+            </section>
+
+            <section class="card2">
+                <h2>Interstellar</h2>
+                <img src="../Mini-Projects/public/images/Interstellar.jpg" alt="Interstellar">
+                <span>A breathtaking journey through space and time to save humanity.</span>
+                <p>⭐⭐⭐⭐⭐</p>
+            </section>
+        </div>
+
+        <section class="trending">
+            <h2>Trending Movies</h2>
+            <ul>
+                <li>✓ Avengers</li>
+                <li>✓ Interstellar</li>
+                <li>✓ Batman</li>
+                <li>✓ Spider-Man</li>
+            </ul>
+            <div class="quote">
+                "Movies touch our hearts and inspire our imagination."
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Lumora Studios</h3>
+        <p>🎬 Entertainment • Adventure • Action 🍿</p>
+        <p class="copy">© 2026 Lumora-Studios. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
