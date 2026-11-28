@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite GameHub</title>
+    <link rel="stylesheet" href="../Mini-Projects/node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <style>
         *{
             box-sizing: border-box;
@@ -23,11 +24,31 @@
             padding-bottom: 14px;
             font-size: 25px;
         }
+        main{
+            background-color: gray
+        }
+        .card{
+            background-color: aliceblue;
+            color: black;
+            border-radius: 20px;
+        }
+        .card-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+        .card-title{
+            font-size: 30px;
+        }
         footer{
             background-color: black;
             color: white;
             text-align: center;
+            margin-top: 400px;
+            padding: 17px;
         }
+        
     </style>
 
 </head>
@@ -39,10 +60,35 @@
     <main>
         <section>
             <div class="card">
-                <div class="card-header">
-                    <img src="../Mini-Projects/public/images/avangers-endgame.jpg"
+
+            <div class="card-header">
+                <img src="./public/images/GTA VI.jpg" class="card-img">
+            </div>
+
+            <div class="card-body">
+                <div class="card-title">GTA VI</div>
+                <p>Action Adventure Game</p>
+                <div class="rating">
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                </div>
+                <ul class="course-details">
+                    <li> Platform : PS5/XBOX/PC</li>
+                    <li> Price : ₹7499 </li>
+                    <li> Storage : 200 GB </li>
+                    <li> Mode : Single / Online</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <div class="btn-buyNow">
+                    <span> Buy Now </span>
                 </div>
             </div>
+        </div>
         </section>
     </main>
     <footer>
